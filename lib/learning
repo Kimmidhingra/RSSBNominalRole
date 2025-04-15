@@ -1,0 +1,28 @@
+=============== commands ===============
+To remove unused imports => shift + Alt + O
+
+================================================================
+Cascade operator in flutter
+The cascade operator (..) allows you to call multiple methods on the same object without repeating its name.
+we represent it will double dor
+Examples:
+File(filePath)
+..createSync(recursive: true)
+..writeAsBytesSync(excel.encode()!);
+Without cascade operator
+File file = File(filePath);
+file.createSync(recursive: true);
+file.writeAsBytesSync(excel.encode()!);
+
+==============================
+try {
+// Step 2: Call platform channel to save to Downloads
+final result = await platform.invokeMethod('saveExcelToDownloads', {
+'fileName': 'my_excel_filess.xlsx',
+'bytes': Uint8List.fromList(fileBytes),
+});
+print('✅ Success: $result');
+} catch (e) {
+print('❌ Error saving file: $e');
+}
+======================================================
